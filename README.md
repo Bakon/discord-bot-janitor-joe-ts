@@ -11,7 +11,7 @@ If the bot is added to your Discord server, you can run certain commands.<br>
 The prefix to run those commands is '!' (without quotes).
 
 ### `--kick (username)`
-Will kick the <bold>mentioned</bold> user.<br>
+Will kick the @mentioned user.<br>
 Can given a third parameter, which would be the reasoning, which is optional.<br>
 If no reason is specified, it will say this in the respective server log.
 
@@ -19,7 +19,7 @@ If no reason is specified, it will say this in the respective server log.
 Exactly the same as kick, but will ban the mentioned user instead.
 
 ### `--champion`
-Returns a random champion from (League of Legends)[https://leagueoflegends.com]<br>
+Returns a random champion from [League of Legends](https://leagueoflegends.com)<br>
 If given the parameter 'top', 'mid', 'jungle', 'adc' or 'support', it will return champions respectively to those lanes.
 
 ### `--coinflip`
