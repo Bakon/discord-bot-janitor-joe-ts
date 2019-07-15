@@ -14,12 +14,11 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  // Ignore the message if it was sent by the bot
+  // Ignores messages sent by the bot itself
   if (msg.author.bot) return;
   // Ignore messages that don't start with the prefix
   if (!msg.content.startsWith(ConfigFile.config.prefix)) return;
-
-  // Handle the loadCommands
+  // Handles the loadCommands
   handleCommand(msg);
 });
 
@@ -28,7 +27,7 @@ async function handleCommand(msg: Discord.Message) {
   let args = msg.content.split(' ').slice(1);
 
   for (const commandClass of commands) {
-     // Attempt to execute code but ready to catch errors
+     // Attempts to execute code but will be ready to catch errors
     try {
       // Check if our command class is correct
       if (!commandClass.isCommand(command)) continue;
@@ -48,7 +47,7 @@ function loadCommands(commandsPath: string) {
   // Loop through all of the commands in config file
   for (const commandName of ConfigFile.config.commands as string[]) {
     const commandsClass = require(`${commandsPath}/${commandName}`).default;
-    // Cast as our IBotCommand interface
+    // Casts as our IBotCommand interface
     const command = new commandsClass() as IBotCommand;
 
     commands.push(command);

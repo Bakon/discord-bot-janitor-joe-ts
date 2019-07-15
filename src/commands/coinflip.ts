@@ -5,7 +5,7 @@ export default class coinflip implements IBotCommand {
   private readonly _command = 'coinflip'
 
   help(): string {
-    return 'Does a coinflip so you know the outcome of a game kappa';
+    return 'Does a coinflip so you know the outcome of a game';
   }
 
   isCommand(command: string): boolean {
