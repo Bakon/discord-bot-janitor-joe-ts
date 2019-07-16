@@ -2,7 +2,7 @@
 
 Janitor Joe is the friendly Discord bot that is always cleaning up after your mess.<br>
 
-## `Tools used in this project`
+## Tools used in this project
 [Discord.js](https://redux.js.org/)<br>
 [TypeScript](https://www.typescriptlang.org/)<br>
 
@@ -25,7 +25,7 @@ Exactly the same as kick, but will ban the mentioned user instead.
 Deletes the requested amount of messages, you can delete 1-100 messages at once.<br>
 You can not delete more than 100 at a time because Discord doesn't let you.
 
-## `Commands for everyone!`
+## Commands for everyone!
 
 ### `!coinflip`
 Does a coinflip to 'predict' the result of your next game.
