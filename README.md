@@ -10,7 +10,7 @@ Janitor Joe is the friendly Discord bot that is always cleaning up after your me
 If the bot is added to your Discord server, you can run certain commands.<br>
 The prefix to run those commands is '!' (without quotes).
 
-## `Admin commands`
+## Admin commands
 These commands can only be performed by admins.
 
 ### `!kick (username)`
