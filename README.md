@@ -2,13 +2,16 @@
 
 Janitor Joe is the friendly Discord bot that is always cleaning up after your mess.<br>
 
-### `Tools used in this project`
+## `Tools used in this project`
 [Discord.js](https://redux.js.org/)<br>
 [TypeScript](https://www.typescriptlang.org/)<br>
 
 ## Available Commands
 If the bot is added to your Discord server, you can run certain commands.<br>
 The prefix to run those commands is '!' (without quotes).
+
+## `Admin commands`
+These commands can only be performed by admins.
 
 ### `!kick (username)`
 Will kick the @mentioned user.<br>
@@ -17,6 +20,15 @@ If no reason is specified, it will say this in the respective server log.
 
 ### `!ban (username)`
 Exactly the same as kick, but will ban the mentioned user instead.
+
+### `!purge (amount of messages to delete)`
+Deletes the requested amount of messages, you can delete 1-100 messages at once.<br>
+You can not delete more than 100 at a time because Discord doesn't let you.
+
+## `Commands for everyone!`
+
+### `!coinflip`
+Does a coinflip to 'predict' the result of your next game.
 
 ### `!champion`
 Returns a random champion from [League of Legends](https://leagueoflegends.com)<br>

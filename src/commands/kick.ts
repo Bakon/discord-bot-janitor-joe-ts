@@ -5,7 +5,7 @@ export default class kick implements IBotCommand {
   private readonly _command = 'kick'
 
   help(): string {
-    return 'Kicks the mentioned user';
+    return 'Admin only | Kicks the mentioned user';
   }
 
   isCommand(command: string): boolean {
@@ -20,12 +20,18 @@ export default class kick implements IBotCommand {
     msgObject.delete(0);
 
     if (!msgObject.member.hasPermission('ADMINISTRATOR')) {
-      msgObject.channel.send(`Sorry ${msgObject.author.username}, but you don't have permission to do this!`);
+      msgObject.channel.send(`Sorry ${msgObject.author.username}, but you don't have permission to do that!`)
+      .then(msg => {
+          (msg as Discord.Message).delete(5000);
+        });
       return;
     }
 
     if (!mentionedUser) {
-      msgObject.channel.send(`Sorry ${msgObject.author.username}, I couldn't find that user!`);
+      msgObject.channel.send(`Sorry ${msgObject.author.username}, I couldn't find that user!`)
+      .then(msg => {
+          (msg as Discord.Message).delete(5000);
+        });
       return;
     }
 

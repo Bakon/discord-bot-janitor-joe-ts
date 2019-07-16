@@ -15,9 +15,9 @@ export default class tifu implements IBotCommand {
 
   runCommand(args: string[], msgObject: Discord.Message, client: Discord.Client): void {
     function tifu() {
-      // fetch('https://www.reddit.com/r/tifu/new.json?sort=new')
-      //   .then(res => res.json())
-      //   .then(json => json.data.children)
+    // fetch('https://www.reddit.com/r/tifu/new.json?sort=new')
+    //   .then(res => res.json())
+    //   .then(json => json.data.children)
     }
     msgObject.channel.send(tifu());
   } 

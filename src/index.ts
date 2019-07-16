@@ -10,7 +10,10 @@ loadCommands(`${__dirname}/commands`)
 
 client.on('ready', () => {
   // Let us know that the bot is online
-  console.log('Ready to go!');
+  client.user.setActivity('Janitor simulator', { type: 'PLAYING' })
+    .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
+     .catch(console.error);
+  console.log('Ready to clean up your mess!');
 });
 
 client.on('message', msg => {
