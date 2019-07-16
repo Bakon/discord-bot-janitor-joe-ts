@@ -15,8 +15,8 @@ export default class coinflip implements IBotCommand {
   runCommand(args: string[], msgObject: Discord.Message, client: Discord.Client): void {
     function coinFlip() {
       return (Math.floor(Math.random() * 2) == 0)
-        ? 'You will win this game'
-        : 'You will lose this game';
+        ? 'has blessed you, you will win next game'
+        : 'didn\'t bless you, you will lose this game';
     }
     
     msgObject.channel.send(coinFlip());

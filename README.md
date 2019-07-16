@@ -10,19 +10,19 @@ Janitor Joe is the friendly Discord bot that is always cleaning up after your me
 If the bot is added to your Discord server, you can run certain commands.<br>
 The prefix to run those commands is '!' (without quotes).
 
-### `--kick (username)`
+### `!kick (username)`
 Will kick the @mentioned user.<br>
-Can given a third parameter, which would be the reasoning, which is optional.<br>
+Can be given a third parameter, which would be the reasoning, which is optional.<br>
 If no reason is specified, it will say this in the respective server log.
 
-### `--ban (username)`
+### `!ban (username)`
 Exactly the same as kick, but will ban the mentioned user instead.
 
-### `--champion`
+### `!champion`
 Returns a random champion from [League of Legends](https://leagueoflegends.com)<br>
 If given the parameter 'top', 'mid', 'jungle', 'adc' or 'support', it will return champions respectively to those lanes.
 
-### `--coinflip`
+### `!coinflip`
 Does a coinflip to 'predict' the result of your next game.
 
 ## Available Scripts

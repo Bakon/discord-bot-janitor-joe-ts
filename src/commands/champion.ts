@@ -18,11 +18,11 @@ export default class champion implements IBotCommand {
       let suppliedRole = args.slice(0).join(' ');
 
        switch (suppliedRole) {
-        case 'adc':
+        case 'adc' || 'bot':
           return Champions.adc[Math.floor(Math.random() * Champions.adc.length)];
         break;
         
-        case 'support':
+        case 'support' || 'supp':
           return Champions.support[Math.floor(Math.random() * Champions.support.length)];
         break;
 
@@ -30,7 +30,7 @@ export default class champion implements IBotCommand {
           return Champions.mid[Math.floor(Math.random() * Champions.mid.length)];
         break;
 
-        case 'jungle':
+        case 'jungle' || 'jgl':
           return Champions.jungle[Math.floor(Math.random() * Champions.jungle.length)];
         break;
 
