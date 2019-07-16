@@ -1,6 +1,7 @@
 import * as Discord from 'discord.js';
 import { IBotCommand } from '../api';
 
+
 export default class coinflip implements IBotCommand {
   private readonly _command = 'coinflip'
 
@@ -13,12 +14,9 @@ export default class coinflip implements IBotCommand {
   }
 
   runCommand(args: string[], msgObject: Discord.Message, client: Discord.Client): void {
-    function coinFlip() {
-      return (Math.floor(Math.random() * 2) == 0)
-        ? 'has blessed you, you will win next game'
-        : 'didn\'t bless you, you will lose this game';
-    }
-    
-    msgObject.channel.send(coinFlip());
+    let random = (Math.floor(Math.random() * 2) == 0)
+      ? 'has blessed you, you will win next game'
+      : 'didn\'t bless you, you will lose this game';
+    msgObject.channel.send(random);
   } 
 };

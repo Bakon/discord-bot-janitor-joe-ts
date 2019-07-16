@@ -1,19 +1,19 @@
 import * as Discord from 'discord.js';
 import * as ConfigFile from '../config';
+import glob from 'glob';
+
 import { IBotCommand } from './api';
+import { state } from './state';
 
 const client: Discord.Client = new Discord.Client();
 
 let commands: IBotCommand[] = [];
-
-loadCommands(`${__dirname}/commands`)
 
 client.on('ready', () => {
   // Let us know that the bot is online
   client.user.setActivity('Janitor simulator', { type: 'PLAYING' })
     .then(presence => console.log(`Activity set to ${presence.game ? presence.game.name : 'none'}`))
      .catch(console.error);
-  console.log('Ready to clean up your mess!');
 });
 
 client.on('message', msg => {
@@ -23,6 +23,12 @@ client.on('message', msg => {
   if (!msg.content.startsWith(ConfigFile.config.prefix)) return;
   // Handles the loadCommands
   handleCommand(msg);
+});
+
+glob.sync(`${__dirname}/commands/*.{t,j}s`).forEach(filePath => {
+  const commandsClass = require(filePath).default;
+
+  commands.push(new commandsClass());
 });
 
 async function handleCommand(msg: Discord.Message) {
@@ -43,18 +49,5 @@ async function handleCommand(msg: Discord.Message) {
   }
 }
 
-function loadCommands(commandsPath: string) {
-  // Exit if no commands  
-  if (!ConfigFile.config || (ConfigFile.config.commands as string[]).length === 0) return;
-
-  // Loop through all of the commands in config file
-  for (const commandName of ConfigFile.config.commands as string[]) {
-    const commandsClass = require(`${commandsPath}/${commandName}`).default;
-    // Casts as our IBotCommand interface
-    const command = new commandsClass() as IBotCommand;
-
-    commands.push(command);
-  }
-}
-
-client.login(ConfigFile.config.token);
+client.login(ConfigFile.config.token)
+  .then(() => console.log('Ready to clean up your mess!'))

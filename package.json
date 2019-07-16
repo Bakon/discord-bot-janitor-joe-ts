@@ -4,8 +4,10 @@
   "description": "Janitor Joe, the friendly discord bot",
   "main": "index.js",
   "dependencies": {
+    "@types/glob": "^7.1.1",
     "@types/node-fetch": "^2.3.7",
     "discord.js": "^11.5.1",
+    "glob": "^7.1.4",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
