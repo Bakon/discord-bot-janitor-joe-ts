@@ -1,3 +1,7 @@
+# [New version](https://github.com/Julicolo/JanitorJoe)
+This is an older version of Janitor Joe and will no longer be updated!<br>
+Please take a look at the above mentioned repository.
+
 ## Janitor Joe, the Discord bot
 
 Janitor Joe is the friendly Discord bot that is always cleaning up after your mess.<br>
