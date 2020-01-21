@@ -1,19 +1,18 @@
 import * as Discord from 'discord.js';
-import { IBotCommand } from '../api';
+import {IBotCommand} from '../api';
 
 export default class help implements IBotCommand {
-  private readonly _command = 'help'
+    private readonly _command = 'help';
 
-  help(): string {
-    return 'Returns a list';
-  }
+    help(): string {
+        return 'Returns a list';
+    }
 
-  isCommand(command: string): boolean {
-    return command === this._command;
-  }
+    isCommand(command: string): boolean {
+        return command === this._command;
+    }
 
-  runCommand(args: string[], msgObject: Discord.Message, client: Discord.Client): void {
-
-    msgObject.channel.send();
-  } 
-};
+    runCommand(args: string[], msgObject: Discord.Message, client: Discord.Client): void {
+        msgObject.channel.send();
+    }
+}

@@ -1,6 +1,6 @@
-import { token } from './token';
+import {token} from './token';
 
 export const config = {
-  token: token,
-  prefix: '/'
-}
+    token: token,
+    prefix: '/'
+};
